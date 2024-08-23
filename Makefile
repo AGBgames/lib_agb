@@ -5,8 +5,6 @@ all: agb
 
 agb: files winutils info
 	clang++ out/files.o out/winutils.o out/info.o -o bin/agb.dll -shared $(compile_options)
-	cp bin/agb.dll ../errhandler/bin/agb.dll
-	cp bin/agb.dll ../../Project/agb.dll
 
 info: src/info.cpp
 	clang++ -c src/info.cpp -o out/info.o $(compile_options)
