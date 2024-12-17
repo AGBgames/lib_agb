@@ -1,10 +1,10 @@
 compile_standard = -std=c++20
 compile_options = -Wall -Werror -Wextra -Wpedantic -fpic $(compile_standard)
 
-all: agb
+all: libagb
 
-agb: files winutils info
-	clang++ out/files.o out/winutils.o out/info.o -o bin/agb.dll -shared $(compile_options)
+libagb: files winutils info
+	clang++ out/files.o out/winutils.o out/info.o -o bin/libagb.dll -shared $(compile_options)
 
 info: src/info.cpp
 	clang++ -c src/info.cpp -o out/info.o $(compile_options)
