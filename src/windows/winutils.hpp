@@ -9,6 +9,7 @@ typedef long window_t;
 constexpr window_t wind_info_ok = MB_ICONINFORMATION | MB_OK;
 constexpr window_t wind_error_ok = MB_ICONERROR | MB_OK;
 constexpr window_t wind_error_retrycancel = MB_ICONERROR | MB_RETRYCANCEL;
+constexpr window_t wind_error_okeycancel = MB_ICONERROR | MB_OKCANCEL;
 
 // Update global window title for messagebox windows.
 void set_global_window_title(const std::string &new_global_window_title);
