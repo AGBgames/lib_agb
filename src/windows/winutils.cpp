@@ -1,5 +1,3 @@
-#include <vector>
-
 #include "winutils.hpp"
 
 #include "../common/common.hpp"
@@ -12,7 +10,7 @@ void set_global_window_title(const std::string &new_global_window_title)
     global_window_title = new_global_window_title;
 }
 
-std::string get_global_window_title() 
+std::string get_global_window_title()
 {
     return global_window_title;
 }
@@ -25,19 +23,6 @@ int quick_messagebox(const std::string &text, const std::string &title, unsigned
 int quick_messagebox(const std::string &text, unsigned long types)
 {
     return quick_messagebox(text, global_window_title, types);
-}
-
-constexpr std::string unknown_error = "Unknown Error";
-static std::string get_error_code_message(size_t error_code) 
-{
-    if (get_error_code_messages().size() - 1 < error_code)
-        return unknown_error;
-    for (size_t i = 0; i < get_error_code_messages().size(); i++)
-    {
-        if (error_code == i) 
-            return get_error_code_messages()[i];
-    }
-    return unknown_error;
 }
 
 int display_error_message(int error_code, const std::string &source, const std::string &extra_info)
@@ -55,7 +40,7 @@ int display_error_message(int error_code, const std::string &source, const std::
     message.append(std::to_string(get_lib_cpp_standard()));
     message.append("\n\nDetails: \n");
     message.append("Error: ");
-    message.append(get_error_code_message(error_code));
+    message.append(agberror::get_error_code_message(error_code));
     message.append("\n");
     message.append("Source: ");
     message.append(source);

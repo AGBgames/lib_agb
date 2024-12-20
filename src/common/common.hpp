@@ -10,7 +10,13 @@
 #include <vector>
 #include <string>
 
-std::vector<std::string> get_error_code_messages();
+namespace agberror
+{
+    std::vector<std::string> get_error_code_messages();
+
+    std::string get_error_code_message(size_t error_code);
+}
+
 
 // Utils method for a quick join of two strings.
 std::string quick_joinstrings(const std::string &str1, const std::string &str2);

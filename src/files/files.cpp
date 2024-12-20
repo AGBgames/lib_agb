@@ -10,9 +10,11 @@ bool open_file(const std::string &filename, std::fstream *stream, std::ios_base:
     {
         if (!suppress_errors)
             display_error_message(0, "lib_agb:files/filesys.cpp:12",
-                              "Invalid filename/-path.");
-        return false;                    
+                                             "Invalid filename/-path.");
+        return false;
     }
+
+    stream->close();
 
     return true;
 }
@@ -24,12 +26,14 @@ bool write_file(const std::string &filename, const std::string &data,
     if (!open_file(filename, &stream, std::ios_base::out))
     {
         if (!suppress_errors)
-            display_error_message(1, "lib_agb:files/filesys.cpp:12",
-                              "Invalid filename/-path.");
+            display_error_message(0, "lib_agb:files/filesys.cpp:12",
+                                             "Invalid filename/-path.");
         return false;
     }
 
     stream << data;
+
+    stream.close();
 
     return true;
 }

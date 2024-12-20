@@ -5,7 +5,11 @@
 
 #include <string>
 
+/**
+    Typedefinition of long for the windows api messageboxes.
+ */
 typedef long window_t;
+
 constexpr window_t wind_info_ok = MB_ICONINFORMATION | MB_OK;
 constexpr window_t wind_error_ok = MB_ICONERROR | MB_OK;
 constexpr window_t wind_error_retrycancel = MB_ICONERROR | MB_RETRYCANCEL;
