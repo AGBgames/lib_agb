@@ -2,6 +2,7 @@
 
 #include "winutils.hpp"
 
+#include "../common/common.hpp"
 #include "../info.hpp"
 
 static std::string global_window_title{};
@@ -26,17 +27,15 @@ int quick_messagebox(const std::string &text, unsigned long types)
     return quick_messagebox(text, global_window_title, types);
 }
 
-std::vector<std::string> error_code_messages { "Failed to open std::fstream" };
-
 constexpr std::string unknown_error = "Unknown Error";
 static std::string get_error_code_message(size_t error_code) 
 {
-    if (error_code_messages.size() - 1 < error_code)
+    if (get_error_code_messages().size() - 1 < error_code)
         return unknown_error;
-    for (size_t i = 0; i < error_code_messages.size(); i++)
+    for (size_t i = 0; i < get_error_code_messages().size(); i++)
     {
         if (error_code == i) 
-            return error_code_messages[i];
+            return get_error_code_messages()[i];
     }
     return unknown_error;
 }

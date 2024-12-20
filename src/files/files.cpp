@@ -23,6 +23,9 @@ bool write_file(const std::string &filename, const std::string &data,
     std::fstream stream{};
     if (!open_file(filename, &stream, std::ios_base::out))
     {
+        if (!suppress_errors)
+            display_error_message(1, "lib_agb:files/filesys.cpp:12",
+                              "Invalid filename/-path.");
         return false;
     }
 
