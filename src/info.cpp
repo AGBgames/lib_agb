@@ -2,7 +2,7 @@
 
 int get_lib_version()
 {
-    return 1024;
+    return 1032;
 }
 
 int get_lib_cpp_standard()

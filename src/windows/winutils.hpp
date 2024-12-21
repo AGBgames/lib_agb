@@ -28,4 +28,4 @@ int quick_messagebox(const std::string &text, unsigned long types);
 // ##################################### ERROR HANDLING #####################################
 
 // Display messagebox with information about an error or an important information during runtime.
-int display_error_message(int error_code, const std::string &source, const std::string &extra_info);
+int display_error_message(int error_code, const std::string &source, const std::string &additional_info);
